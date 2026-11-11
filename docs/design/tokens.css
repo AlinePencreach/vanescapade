@@ -1,0 +1,126 @@
+/* Van Escapade — generated from tokens.json */
+:root, [data-theme="light"] {
+  --bg: #fffbf2;
+  --surface: #ffffff;
+  --surface-sunken: #fdf3dc;
+  --border: #ece2cb;
+  --border-strong: #7d7461;
+  --ink: #14232b;
+  --ink-muted: #4e5d64;
+  --action: #09425e;
+  --action-hover: #106a97;
+  --on-action: #ffffff;
+  --action-soft: #e3eff5;
+  --on-action-soft: #09425e;
+  --accent: #fe6917;
+  --on-accent: #14232b;
+  --accent-soft: #fff4ec;
+  --on-accent-soft: #8a3608;
+  --focus: #b3460b;
+  --success: #326659;
+  --success-soft: #e8f1ed;
+  --success-ink: #234a40;
+  --warning: #b07206;
+  --warning-soft: #fdf1d6;
+  --warning-ink: #704804;
+  --error: #c0362c;
+  --error-soft: #fde8e6;
+  --error-ink: #952820;
+  --info: #106a97;
+  --info-soft: #e3eff5;
+  --info-ink: #09425e;
+  --marine-50: #eef5f8;
+  --marine-100: #d7e7ef;
+  --marine-200: #b0cfdc;
+  --marine-300: #7eabbf;
+  --marine-400: #4a89a8;
+  --marine-500: #106a97;
+  --marine-600: #0d5679;
+  --marine-700: #09425e;
+  --marine-800: #07344b;
+  --marine-900: #052839;
+  --orange-50: #fff4ec;
+  --orange-100: #ffe2cf;
+  --orange-300: #ffa46b;
+  --orange-500: #fe6917;
+  --orange-700: #b3460b;
+  --orange-800: #8a3608;
+  --sable-0: #ffffff;
+  --sable-50: #fffbf2;
+  --sable-100: #fdf3dc;
+  --sable-200: #fae4aa;
+  --sable-300: #e9d6a6;
+  --sable-400: #b3a588;
+  --sable-500: #7d7461;
+  --sable-600: #5c5547;
+  --sable-700: #423d33;
+  --sable-800: #2b2822;
+  --sable-900: #1a1916;
+  --sapin-50: #e8f1ed;
+  --sapin-300: #7fa99b;
+  --sapin-500: #326659;
+  --sapin-700: #234a40;
+  --shadow-1: 0 1px 2px rgba(9,66,94,0.06), 0 1px 3px rgba(9,66,94,0.05);
+  --shadow-2: 0 2px 4px rgba(9,66,94,0.05), 0 6px 14px rgba(9,66,94,0.08);
+  --shadow-3: 0 4px 8px rgba(9,66,94,0.06), 0 14px 28px rgba(9,66,94,0.12);
+  --shadow-4: 0 8px 16px rgba(9,66,94,0.08), 0 28px 56px rgba(9,66,94,0.16);
+}
+[data-theme="dark"] {
+  --bg: #0b1a22;
+  --surface: #11242e;
+  --surface-sunken: #071319;
+  --border: #243944;
+  --border-strong: #7f97a3;
+  --ink: #f4efe3;
+  --ink-muted: #a9b8bf;
+  --action: #9cc3d5;
+  --action-hover: #c3dce7;
+  --on-action: #052839;
+  --action-soft: #13384a;
+  --on-action-soft: #d7e7ef;
+  --accent: #ff8a4a;
+  --on-accent: #14232b;
+  --accent-soft: #3a2014;
+  --on-accent-soft: #ffc9a6;
+  --focus: #ffa46b;
+  --success: #6fb39f;
+  --success-soft: #12302a;
+  --success-ink: #bfe0d5;
+  --warning: #e8a640;
+  --warning-soft: #3a2a10;
+  --warning-ink: #f6d8a4;
+  --error: #ef7b72;
+  --error-soft: #3d1a18;
+  --error-ink: #f8c4bf;
+  --info: #7eabbf;
+  --info-soft: #13384a;
+  --info-ink: #d7e7ef;
+  --shadow-1: 0 1px 2px rgba(0,0,0,0.30);
+  --shadow-2: 0 4px 10px rgba(0,0,0,0.35);
+  --shadow-3: 0 12px 24px rgba(0,0,0,0.45);
+  --shadow-4: 0 24px 48px rgba(0,0,0,0.55);
+}
+:root {
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+  --font-display: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.display { font-family: var(--font-display); font-size: 56px; line-height: 1.05; font-weight: 700; letter-spacing: -0.03em; }
+.h1 { font-family: var(--font-display); font-size: 36px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; }
+.h2 { font-family: var(--font-display); font-size: 24px; line-height: 1.25; font-weight: 600; }
+.h3 { font-family: var(--font-display); font-size: 20px; line-height: 1.3; font-weight: 600; }
+.body { font-family: var(--font-sans); font-size: 16px; line-height: 1.5; font-weight: 400; }
+.body-strong { font-family: var(--font-sans); font-size: 16px; line-height: 1.5; font-weight: 600; }
+.small { font-family: var(--font-sans); font-size: 14px; line-height: 1.5; font-weight: 400; }
+.caption { font-family: var(--font-sans); font-size: 12px; line-height: 1.4; font-weight: 500; }
+.overline { font-family: var(--font-sans); font-size: 12px; line-height: 1.4; font-weight: 600; letter-spacing: 0.08em; }

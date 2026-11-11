@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap");
+
+/* Van Escapade — composants. Toutes les valeurs viennent de tokens.css. Préfixe ve-. */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-sans); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, p, ul, ol, figure, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: var(--action); text-underline-offset: 3px; }
+a:hover { color: var(--action-hover); }
+.overline { text-transform: uppercase; }
+.muted { color: var(--ink-muted); }
+.ve-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Focus clavier : un seul style partout */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.ve-focus { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+/* Icônes Lucide, trait 2 px, couleur héritée */
+.ve-icon { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
+.ve-icon--16 { width: 16px; height: 16px; }
+.ve-icon--24 { width: 24px; height: 24px; }
+
+/* Logo typographique (pas de logo fourni) */
+.ve-logo { display: inline-flex; align-items: baseline; font-family: var(--font-sans); font-size: 26px; line-height: 1; letter-spacing: -0.03em; text-decoration: none; }
+.ve-logo b { font-weight: 700; color: var(--accent); }
+.ve-logo span { font-weight: 400; color: var(--action); }
+[data-theme="dark"] .ve-logo span { color: var(--sable-200); }
+
+/* Boutons : 3 niveaux */
+.ve-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-sm); height: 44px; padding: 0 var(--space-lg); border-radius: var(--radius-md); border: 1.5px solid transparent; font: 600 16px/1 var(--font-sans); cursor: pointer; text-decoration: none; white-space: nowrap; transition: background-color .15s, border-color .15s, box-shadow .15s; }
+.ve-btn--primary { background: var(--action); color: var(--on-action); }
+.ve-btn--primary:hover, .ve-btn--primary.is-hover { background: var(--action-hover); color: var(--on-action); }
+.ve-btn--secondary { background: var(--surface); color: var(--action); border-color: var(--action); }
+.ve-btn--secondary:hover, .ve-btn--secondary.is-hover { background: var(--action-soft); color: var(--action-hover); }
+.ve-btn--tertiary { background: transparent; color: var(--action); padding: 0 var(--space-sm); }
+.ve-btn--tertiary:hover, .ve-btn--tertiary.is-hover { color: var(--action-hover); text-decoration: underline; }
+.ve-btn--lg { height: 52px; padding: 0 var(--space-xl); font-size: 17px; }
+.ve-btn--sm { height: 36px; padding: 0 var(--space-md); font-size: 14px; }
+.ve-btn--block { width: 100%; }
+.ve-btn[disabled], .ve-btn.is-disabled { background: var(--surface-sunken); color: var(--ink-muted); border-color: var(--border); cursor: not-allowed; }
+.ve-btn.is-loading { opacity: .85; cursor: progress; }
+.ve-spinner { width: 16px; height: 16px; border-radius: var(--radius-full); border: 2px solid currentColor; border-right-color: transparent; }
+
+/* Champs */
+.ve-field { display: flex; flex-direction: column; gap: var(--space-sm); }
+.ve-label { font-size: 14px; font-weight: 600; color: var(--ink); }
+.ve-label .opt { font-weight: 400; color: var(--ink-muted); }
+.ve-input { display: flex; align-items: center; gap: var(--space-sm); height: 44px; padding: 0 var(--space-md); background: var(--surface); border: 1.5px solid var(--border-strong); border-radius: var(--radius-md); color: var(--ink); font: 400 16px/1.2 var(--font-sans); }
+.ve-input .ve-icon { color: var(--ink-muted); }
+.ve-input .ph { color: var(--ink-muted); }
+.ve-input.is-focus { border-color: var(--action); outline: 3px solid var(--focus); outline-offset: 2px; }
+.ve-input.is-error { border-color: var(--error); }
+.ve-input.is-disabled { background: var(--surface-sunken); color: var(--ink-muted); border-color: var(--border); }
+.ve-help { font-size: 14px; color: var(--ink-muted); }
+.ve-error { display: flex; align-items: center; gap: var(--space-xs); font-size: 14px; color: var(--error-ink); }
+.ve-error .ve-icon { color: var(--error); }
+
+.ve-check { display: flex; align-items: center; gap: var(--space-sm); font-size: 15px; color: var(--ink); min-height: 32px; }
+.ve-check__box { width: 20px; height: 20px; border-radius: var(--radius-sm); border: 1.5px solid var(--border-strong); background: var(--surface); display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.ve-check__box.is-on { background: var(--action); border-color: var(--action); color: var(--on-action); }
+.ve-check__box .ve-icon { width: 14px; height: 14px; stroke-width: 3; }
+.ve-check .count { margin-left: auto; color: var(--ink-muted); font-size: 14px; }
+.ve-radio { border-radius: var(--radius-full); }
+.ve-radio.is-on { background: var(--surface); border: 6px solid var(--action); }
+
+/* Slider de prix (visuel) */
+.ve-range { position: relative; height: 24px; margin: 0 10px; }
+.ve-range__track { position: absolute; top: 10px; left: 0; right: 0; height: 4px; border-radius: var(--radius-full); background: var(--border); }
+.ve-range__fill { position: absolute; top: 10px; height: 4px; border-radius: var(--radius-full); background: var(--action); }
+.ve-range__thumb { position: absolute; top: 2px; width: 20px; height: 20px; margin-left: -10px; border-radius: var(--radius-full); background: var(--surface); border: 2px solid var(--action); box-shadow: var(--shadow-1); }
+.ve-range__values { display: flex; justify-content: space-between; font-size: 14px; color: var(--ink-muted); }
+
+/* Puces de filtre */
+.ve-chip { display: inline-flex; align-items: center; gap: var(--space-xs); height: 36px; padding: 0 var(--space-md); border-radius: var(--radius-full); border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--ink); font: 500 14px/1 var(--font-sans); white-space: nowrap; cursor: pointer; }
+.ve-chip.is-on { background: var(--action-soft); border-color: var(--action); color: var(--on-action-soft); font-weight: 600; }
+.ve-chip .ve-icon { width: 16px; height: 16px; }
+
+/* Badges */
+.ve-badge { display: inline-flex; align-items: center; gap: var(--space-xs); height: 26px; padding: 0 10px; border-radius: var(--radius-full); font: 600 12px/1 var(--font-sans); background: var(--surface-sunken); color: var(--ink); white-space: nowrap; }
+.ve-badge .ve-icon { width: 14px; height: 14px; stroke-width: 2.25; }
+.ve-badge--primary { background: var(--action-soft); color: var(--on-action-soft); }
+.ve-badge--accent { background: var(--accent-soft); color: var(--on-accent-soft); }
+.ve-badge--success { background: var(--success-soft); color: var(--success-ink); }
+.ve-badge--warning { background: var(--warning-soft); color: var(--warning-ink); }
+.ve-badge--error { background: var(--error-soft); color: var(--error-ink); }
+.ve-badge--info { background: var(--info-soft); color: var(--info-ink); }
+.ve-badge--solid { background: var(--surface); color: var(--ink); box-shadow: var(--shadow-1); }
+
+/* Cartes */
+.ve-card { background: var(--surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-1); padding: var(--space-lg); }
+.ve-card--flat { box-shadow: none; border: 1px solid var(--border); }
+
+/* Carte de van (catalogue) */
+.ve-van { display: flex; flex-direction: column; background: var(--surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-1); overflow: hidden; color: var(--ink); text-decoration: none; transition: box-shadow .2s, transform .2s; }
+.ve-van:hover, .ve-van.is-hover { box-shadow: var(--shadow-2); transform: translateY(-2px); color: var(--ink); }
+.ve-van__media { position: relative; aspect-ratio: 4 / 3; background: var(--surface-sunken); }
+.ve-van__media svg { display: block; width: 100%; height: 100%; }
+.ve-van__tags { position: absolute; top: var(--space-sm); left: var(--space-sm); display: flex; gap: var(--space-xs); }
+.ve-van__body { display: flex; flex-direction: column; gap: var(--space-sm); padding: var(--space-md) var(--space-md) var(--space-md); flex: 1; }
+.ve-van__cat { color: var(--ink-muted); }
+.ve-van__meta { display: flex; flex-wrap: wrap; gap: var(--space-md); font-size: 14px; color: var(--ink-muted); }
+.ve-van__meta span { display: inline-flex; align-items: center; gap: var(--space-xs); }
+.ve-van__meta .ve-icon { width: 16px; height: 16px; }
+.ve-van__foot { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-sm); margin-top: auto; padding-top: var(--space-sm); border-top: 1px solid var(--border); }
+.ve-price-from { font-size: 14px; color: var(--ink-muted); line-height: 1.2; }
+.ve-price-from strong { display: block; white-space: nowrap; font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
+.ve-price-from strong small { font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--ink-muted); letter-spacing: 0; }
+.ve-van.is-off .ve-van__media svg { filter: grayscale(.85); opacity: .7; }
+
+/* En-tête / navigation */
+.ve-header { background: var(--surface); border-bottom: 1px solid var(--border); }
+.ve-header__in { display: flex; align-items: center; gap: var(--space-xl); height: 72px; }
+.ve-nav { display: flex; gap: var(--space-xs); margin-left: auto; }
+.ve-nav a { display: inline-flex; align-items: center; height: 40px; padding: 0 var(--space-md); border-radius: var(--radius-full); color: var(--ink); font-weight: 500; text-decoration: none; }
+.ve-nav a:hover { background: var(--surface-sunken); color: var(--ink); }
+.ve-nav a[aria-current="page"] { background: var(--action-soft); color: var(--on-action-soft); font-weight: 600; }
+.ve-iconbtn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: var(--radius-md); border: 1.5px solid var(--border); background: var(--surface); color: var(--ink); }
+
+/* Pied de page */
+.ve-footer { background: var(--marine-700); color: var(--sable-100); }
+.ve-footer a { color: var(--sable-200); }
+.ve-footer .ve-logo { color: var(--sable-0); }
+.ve-footer .ve-logo span { color: var(--sable-200); }
+.ve-footer__muted { color: var(--marine-200); }
+.ve-hours { display: grid; grid-template-columns: auto 1fr; column-gap: var(--space-lg); row-gap: 2px; font-size: 14px; }
+.ve-hours dt { color: var(--marine-200); }
+.ve-hours dd { color: var(--sable-0); font-variant-numeric: tabular-nums; }
+
+/* Encart Conditions de location */
+.ve-cond { background: var(--accent-soft); border: 1.5px solid var(--accent); border-radius: var(--radius-lg); padding: var(--space-lg); }
+.ve-cond__head { display: flex; align-items: center; gap: var(--space-sm); color: var(--on-accent-soft); margin-bottom: var(--space-md); }
+.ve-cond__head .ve-icon { width: 24px; height: 24px; }
+.ve-cond__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+.ve-cond__item { display: flex; gap: var(--space-sm); align-items: flex-start; }
+.ve-cond__ico { width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--surface); color: var(--on-accent-soft); display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.ve-cond__item dt { font-size: 14px; color: var(--ink-muted); }
+.ve-cond__item dd { font-weight: 700; font-size: 17px; color: var(--ink); line-height: 1.3; }
+.ve-cond__note { margin-top: var(--space-md); font-size: 14px; color: var(--ink-muted); }
+
+/* Récapitulatif de prix */
+.ve-sum { display: flex; flex-direction: column; gap: var(--space-sm); font-size: 15px; }
+.ve-sum__row { display: flex; justify-content: space-between; gap: var(--space-md); }
+.ve-sum__row span:last-child { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ve-sum__row .sub { display: block; font-size: 13px; color: var(--ink-muted); }
+.ve-sum__row.is-discount { color: var(--success-ink); font-weight: 600; }
+.ve-sum__sep { height: 1px; background: var(--border); margin: var(--space-xs) 0; }
+.ve-sum__total { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--font-display); font-weight: 700; font-size: 24px; }
+.ve-sum__deposit { display: flex; gap: var(--space-sm); align-items: flex-start; padding: var(--space-md); border-radius: var(--radius-md); background: var(--surface-sunken); font-size: 14px; color: var(--ink-muted); }
+.ve-sum__deposit strong { color: var(--ink); }
+
+/* Suivi de réservation */
+.ve-timeline { display: flex; flex-direction: column; }
+.ve-tl { display: grid; grid-template-columns: 28px 1fr; column-gap: var(--space-md); position: relative; padding-bottom: var(--space-lg); }
+.ve-tl:last-child { padding-bottom: 0; }
+.ve-tl::before { content: ""; position: absolute; left: 13px; top: 28px; bottom: 0; width: 2px; background: var(--action); }
+.ve-tl:last-child::before { display: none; }
+.ve-tl.is-todo::before { background: var(--border); }
+.ve-tl__dot { width: 28px; height: 28px; border-radius: var(--radius-full); background: var(--action); color: var(--on-action); display: inline-flex; align-items: center; justify-content: center; }
+.ve-tl__dot .ve-icon { width: 16px; height: 16px; stroke-width: 2.5; }
+.ve-tl.is-current .ve-tl__dot { background: var(--surface); color: var(--action); border: 2.5px solid var(--action); }
+.ve-tl.is-todo .ve-tl__dot { background: var(--surface); border: 2px dashed var(--border-strong); color: var(--ink-muted); }
+.ve-tl__title { font-weight: 600; line-height: 28px; }
+.ve-tl.is-todo .ve-tl__title { color: var(--ink-muted); font-weight: 500; }
+.ve-tl__meta { font-size: 14px; color: var(--ink-muted); }
+
+/* Calendrier des disponibilités */
+.ve-cal { font-size: 14px; }
+.ve-cal__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-sm); }
+.ve-cal__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+.ve-cal__dow { font-size: 12px; font-weight: 600; color: var(--ink-muted); padding: 4px 0; }
+.ve-cal__d { height: 36px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); font-variant-numeric: tabular-nums; color: var(--ink); }
+.ve-cal__d.is-out { visibility: hidden; }
+.ve-cal__d.is-booked { background: var(--surface-sunken); color: var(--ink-muted); text-decoration: line-through; }
+.ve-cal__d.is-maint { background: repeating-linear-gradient(135deg, var(--warning-soft) 0 5px, var(--surface-sunken) 5px 10px); color: var(--warning-ink); text-decoration: line-through; }
+.ve-cal__d.is-sel { background: var(--action); color: var(--on-action); font-weight: 700; }
+.ve-cal__d.is-range { background: var(--action-soft); color: var(--on-action-soft); font-weight: 600; }
+.ve-cal__d.is-high { box-shadow: inset 0 -3px 0 var(--accent); }
+.ve-cal__legend { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-md); font-size: 13px; color: var(--ink-muted); }
+.ve-cal__legend span { display: inline-flex; align-items: center; gap: 6px; }
+.ve-cal__sw { width: 16px; height: 16px; border-radius: 4px; display: inline-block; }
+
+/* Avis */
+.ve-stars { display: inline-flex; gap: 2px; color: var(--accent); }
+.ve-stars .ve-icon { width: 18px; height: 18px; fill: currentColor; }
+.ve-stars .is-empty { fill: none; color: var(--border-strong); }
+.ve-avatar { width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--action-soft); color: var(--on-action-soft); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; flex: none; }
+
+/* Alertes */
+.ve-alert { display: flex; gap: var(--space-sm); align-items: flex-start; padding: var(--space-md); border-radius: var(--radius-md); font-size: 15px; }
+.ve-alert--info { background: var(--info-soft); color: var(--info-ink); }
+.ve-alert--success { background: var(--success-soft); color: var(--success-ink); }
+.ve-alert--warning { background: var(--warning-soft); color: var(--warning-ink); }
+.ve-alert--error { background: var(--error-soft); color: var(--error-ink); }
+
+/* Galerie */
+.ve-gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: var(--space-sm); border-radius: var(--radius-lg); overflow: hidden; }
+.ve-gallery > * { position: relative; background: var(--surface-sunken); overflow: hidden; }
+.ve-gallery > *:first-child { grid-row: 1 / 3; }
+.ve-gallery svg { display: block; width: 100%; height: 100%; }
+
+/* Liste de caractéristiques */
+.ve-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+.ve-spec { display: flex; gap: var(--space-sm); align-items: center; }
+.ve-spec__ico { width: 44px; height: 44px; border-radius: var(--radius-md); background: var(--action-soft); color: var(--on-action-soft); display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.ve-spec dt { font-size: 13px; color: var(--ink-muted); }
+.ve-spec dd { font-weight: 600; }
+
+.ve-equip { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-sm) var(--space-lg); }
+.ve-equip li { display: flex; gap: var(--space-sm); align-items: center; }
+.ve-equip .ve-icon { color: var(--action); }
+.ve-equip li.is-no { color: var(--ink-muted); text-decoration: line-through; }
+.ve-equip li.is-no .ve-icon { color: var(--ink-muted); }

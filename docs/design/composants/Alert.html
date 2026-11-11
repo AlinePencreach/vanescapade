@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../tokens.css"><link rel="stylesheet" href="../van-escapade.css">
+<meta charset="utf-8">
+<title>Alert</title>
+<style>
+body { padding: var(--space-lg); background: var(--bg); }
+
+</style>
+</head>
+<body>
+<div style="display:grid;gap:var(--space-sm);max-width:640px">
+<div class="ve-alert ve-alert--info" role="status"><svg class="ve-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><span>Votre réservation peut être modifiée tant qu'elle n'est pas confirmée par l'équipe.</span></div>
+<div class="ve-alert ve-alert--success" role="status"><svg class="ve-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Réservation enregistrée.</strong> Un e-mail de confirmation vient de vous être envoyé.</span></div>
+<div class="ve-alert ve-alert--warning" role="status"><svg class="ve-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><span>Frais constatés au retour : 84,00 €. Sans règlement sous 15 jours, la somme sera retenue sur la caution.</span></div>
+<div class="ve-alert ve-alert--error" role="alert"><svg class="ve-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span>Ce van vient d'être réservé sur une partie de ces dates. Choisissez d'autres dates.</span></div>
+</div>
+</body>
+</html>

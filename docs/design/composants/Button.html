@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../tokens.css"><link rel="stylesheet" href="../van-escapade.css">
+<meta charset="utf-8">
+<title>Button</title>
+<style>
+body { padding: var(--space-lg); background: var(--bg); }
+
+</style>
+</head>
+<body>
+<div style="display:grid;grid-template-columns:120px repeat(4,auto);gap:var(--space-md) var(--space-lg);align-items:center;justify-content:start">
+<span class="caption muted"></span><span class="caption muted">Par défaut</span><span class="caption muted">Survol</span><span class="caption muted">Focus clavier</span><span class="caption muted">Désactivé / chargement</span>
+<span class="small">Primaire</span><button class="ve-btn ve-btn--primary">Réserver ce van</button><button class="ve-btn ve-btn--primary is-hover">Réserver ce van</button><button class="ve-btn ve-btn--primary ve-focus">Réserver ce van</button><button class="ve-btn ve-btn--primary is-loading" aria-busy="true"><span class="ve-spinner"></span>Vérification…</button>
+<span class="small">Secondaire</span><button class="ve-btn ve-btn--secondary"><svg class="ve-icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>Voir les dates</button><button class="ve-btn ve-btn--secondary is-hover"><svg class="ve-icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>Voir les dates</button><button class="ve-btn ve-btn--secondary ve-focus"><svg class="ve-icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>Voir les dates</button><button class="ve-btn ve-btn--secondary" disabled><svg class="ve-icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>Voir les dates</button>
+<span class="small">Tertiaire</span><button class="ve-btn ve-btn--tertiary">Réinitialiser les filtres</button><button class="ve-btn ve-btn--tertiary is-hover">Réinitialiser les filtres</button><button class="ve-btn ve-btn--tertiary ve-focus">Réinitialiser les filtres</button><button class="ve-btn ve-btn--tertiary" disabled>Réinitialiser les filtres</button>
+</div>
+</body>
+</html>
